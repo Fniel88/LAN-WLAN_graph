@@ -37,7 +37,7 @@ lan_edges = [
     ("Switch-LAN", "Laptop-Admin"),
     ("Switch-LAN", "Impresora"),
     ("Switch-LAN", "Servidor HTTP"),
-    ("Switch-LAN", "Access Point")  # ← ahora el AP está conectado al switch
+    ("Switch-LAN", "Access Point") 
 ]
 
 # Conexiones WLAN
@@ -54,12 +54,12 @@ fibra_edges = [("Router", "ISP")]
 G.add_nodes_from(labels.keys())
 G.add_edges_from(lan_edges + wlan_edges + fibra_edges)
 
-# POSICIONES de los nodos (ajustadas visualmente)
+# POSICIONES de los nodos 
 pos = {
-    "ISP": (1.3, 0.8),             # → movido a la derecha
+    "ISP": (1.3, 0.8),            
     "Router": (0.0, 0.0),
     "Switch-LAN": (0.0, -0.8),
-    "Servidor HTTP": (-0.8, -0.2),  # ← movido a la izquierda
+    "Servidor HTTP": (-0.8, -0.2), 
     "PC-Admin": (-0.8, -1.6),
     "Laptop-Admin": (0.0, -1.6),
     "Impresora": (0.8, -1.6),
@@ -214,7 +214,7 @@ def update(frame):
     if salto < len(coords) - 1:
         texto.set_text("Mensaje 'HOLA'")
     else:
-        texto.set_text("Mensaje 'HOLA' recibido ✅")
+        texto.set_text("Mensaje 'HOLA' recibido")
     return mensaje_dot, texto
 
 frames_totales = (len(coords) - 1) * 25 + 25
