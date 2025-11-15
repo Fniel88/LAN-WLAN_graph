@@ -37,7 +37,7 @@ lan_edges = [
     ("Switch-LAN", "Laptop-Admin"),
     ("Switch-LAN", "Impresora"),
     ("Switch-LAN", "Servidor HTTP"),
-    ("Switch-LAN", "Access Point") 
+    ("Switch-LAN", "Access Point")  # ← ahora el AP está conectado al switch
 ]
 
 # Conexiones WLAN
@@ -54,12 +54,12 @@ fibra_edges = [("Router", "ISP")]
 G.add_nodes_from(labels.keys())
 G.add_edges_from(lan_edges + wlan_edges + fibra_edges)
 
-# POSICIONES de los nodos 
+# POSICIONES de los nodos (ajustadas visualmente)
 pos = {
-    "ISP": (1.3, 0.8),            
+    "ISP": (1.3, 0.8),             # → movido a la derecha
     "Router": (0.0, 0.0),
     "Switch-LAN": (0.0, -0.8),
-    "Servidor HTTP": (-0.8, -0.2), 
+    "Servidor HTTP": (-0.8, -0.2),  # ← movido a la izquierda
     "PC-Admin": (-0.8, -1.6),
     "Laptop-Admin": (0.0, -1.6),
     "Impresora": (0.8, -1.6),
